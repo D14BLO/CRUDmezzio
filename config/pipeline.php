@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Laminas\Stratigility\Middleware\ErrorHandler;
 use Mezzio\Application;
 use Mezzio\Handler\NotFoundHandler;
+use Mezzio\Helper\BodyParams\BodyParamsMiddleware;
 use Mezzio\Helper\ServerUrlMiddleware;
 use Mezzio\Helper\UrlHelperMiddleware;
 use Mezzio\MiddlewareFactory;
@@ -44,6 +45,7 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 
     // Register the routing middleware in the middleware pipeline.
     // This middleware registers the Mezzio\Router\RouteResult request attribute.
+    $app->pipe(BodyParamsMiddleware::class);
     $app->pipe(RouteMiddleware::class);
 
     // The following handle routing failures for common conditions:

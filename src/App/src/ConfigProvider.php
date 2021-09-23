@@ -38,9 +38,7 @@ class ConfigProvider
                     RoutesDelegator::class,
                 ]
             ],
-            'invokables' => [
-                Handler\PingHandler::class => Handler\PingHandler::class,
-            ],
+            'invokables' => [],
             'factories'  => [
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
                 Dao\PersonaDao::class          => Factory\PersonaDaoFactory::class,

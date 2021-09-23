@@ -21,20 +21,17 @@ class Persona
     private $id;
 
     /**
-     * @var string
-     * @ORM\Column(name="nombre", type="string", length=20, nullable=false)
+     * @ORM\Column(name="nombre", type="string", length=20, nullable=true)
      */
     private $nombre;
 
     /**
-     * @var string
-     * @ORM\Column(name="apellido_paterno", type="string", length=20, nullable=false)
+     * @ORM\Column(name="apellido_paterno", type="string", length=20, nullable=true)
      */
     private $apellido_paterno;
 
     /**
-     * @var string
-     * @ORM\Column(name="apellido_materno", type="string", length=20, nullable=false)
+     * @ORM\Column(name="apellido_materno", type="string", length=20, nullable=true)
      */
     private $apellido_materno;
 
@@ -55,49 +52,49 @@ class Persona
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getNombre(): string
+    public function getNombre()
     {
         return $this->nombre;
     }
 
     /**
-     * @param string $nombre
+     * @param mixed $nombre
      */
-    public function setNombre(string $nombre): void
+    public function setNombre($nombre): void
     {
         $this->nombre = $nombre;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getApellidoPaterno(): string
+    public function getApellidoPaterno()
     {
         return $this->apellido_paterno;
     }
 
     /**
-     * @param string $apellido_paterno
+     * @param mixed $apellido_paterno
      */
-    public function setApellidoPaterno(string $apellido_paterno): void
+    public function setApellidoPaterno($apellido_paterno): void
     {
         $this->apellido_paterno = $apellido_paterno;
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getApellidoMaterno(): string
+    public function getApellidoMaterno()
     {
         return $this->apellido_materno;
     }
 
     /**
-     * @param string $apellido_materno
+     * @param mixed $apellido_materno
      */
-    public function setApellidoMaterno(string $apellido_materno): void
+    public function setApellidoMaterno($apellido_materno): void
     {
         $this->apellido_materno = $apellido_materno;
     }
